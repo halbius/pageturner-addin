@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PageTurner</title>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+<style>
+#status { font-weight: 600; margin-bottom: 4px; }
+label { display: block; }
+.pad { padding: 10px; font-family: Segoe UI, sans-serif; font-size: 13px; }
+button { margin: 4px 0; padding: 6px 10px; display: block; }
+input[type=text], input:not([type]) { width: 140px; }
+#log { background: #f3f3f3; padding: 6px; white-space: pre-wrap; min-height: 80px; }
+</style></head>
+<body>
+<div class="pad">
+  <div id="status">…</div>
+  <label><input type="checkbox" id="chk-follow" checked /> Dem PageTurner folgen</label>
+  <label><input type="checkbox" id="chk-top" checked /> Stelle am oberen Rand</label>
+  <details>
+    <summary>Werkzeuge / Log</summary>
+    <button id="btn-sets">1) Unterstützung prüfen</button>
+    <button id="btn-ping">2) Helfer erreichbar?</button>
+    <p>Suchtext: <input id="term" value="OTon" /> Treffer Nr.: <input id="occ" value="1" size="3" /></p>
+    <button id="btn-jump">3) Zur Textstelle springen</button>
+    <button id="btn-now">5) Aktuelles Ziel jetzt anspringen</button>
+    <pre id="log"></pre>
+  </details>
+</div>
+
+<script src="taskpane.js"></script>
+</body></html>

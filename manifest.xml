@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="TaskPaneApp">
+  <Id>08ebf0a9-e887-4598-b7f5-9a388e45ef3d</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Christian Alpen</ProviderName>
+  <DefaultLocale>de-DE</DefaultLocale>
+  <DisplayName DefaultValue="PageTurner"/>
+  <Description DefaultValue="Springt in Word zu den Stellen, die der PageTurner (Reaper) meldet."/>
+  <IconUrl DefaultValue="https://halbius.github.io/pageturner-addin/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://halbius.github.io/pageturner-addin/icon-80.png"/>
+  <SupportUrl DefaultValue="https://github.com/halbius"/>
+  <Hosts><Host Name="Document"/></Hosts>
+  <Requirements><Sets><Set Name="WordApi" MinVersion="1.3"/></Sets></Requirements>
+  <DefaultSettings><SourceLocation DefaultValue="https://halbius.github.io/pageturner-addin/index.html"/></DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="PT.Group">
+                <Label resid="Group.Label"/>
+                <Icon><bt:Image size="16" resid="Icon16"/><bt:Image size="32" resid="Icon32"/><bt:Image size="80" resid="Icon80"/></Icon>
+                <Control xsi:type="Button" id="PT.Button">
+                  <Label resid="Btn.Label"/>
+                  <Supertip><Title resid="Btn.Label"/><Description resid="Btn.Tip"/></Supertip>
+                  <Icon><bt:Image size="16" resid="Icon16"/><bt:Image size="32" resid="Icon32"/><bt:Image size="80" resid="Icon80"/></Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>PTPane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon16" DefaultValue="https://halbius.github.io/pageturner-addin/icon-16.png"/>
+        <bt:Image id="Icon32" DefaultValue="https://halbius.github.io/pageturner-addin/icon-32.png"/>
+        <bt:Image id="Icon80" DefaultValue="https://halbius.github.io/pageturner-addin/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls><bt:Url id="Taskpane.Url" DefaultValue="https://halbius.github.io/pageturner-addin/index.html"/></bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Group.Label" DefaultValue="PageTurner"/>
+        <bt:String id="Btn.Label" DefaultValue="PageTurner"/>
+      </bt:ShortStrings>
+      <bt:LongStrings><bt:String id="Btn.Tip" DefaultValue="Dem PageTurner (Reaper) folgen und zu Textstellen springen"/></bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
